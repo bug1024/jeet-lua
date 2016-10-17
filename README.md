@@ -2,15 +2,16 @@
 A simple web framework based on OpenResty
 
 ## structure
- ### core
+
+### core
  your common libraries
 
- ### config
+### config
  your configuration
 
- ### api
+### api
  your business logic
 
- ### app
+### app
  your code in here
 
