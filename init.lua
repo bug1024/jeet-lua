@@ -11,5 +11,12 @@ r:any("/:app/:controller/:action/", function(params, method)
     local controller = require(path)
     controller[params.action]()
 end)
-r:execute(method, uri, data)
+local ok, err = r:execute(method, uri, data)
+
+if ok then
+    ngx.status = 200
+else
+    ngx.status = 404
+    ngx.say(err)
+end
 
