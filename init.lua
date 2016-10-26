@@ -1,4 +1,3 @@
-
 -- ngx
 local method = ngx.var.request_method
 local uri    = ngx.var.request_uri
