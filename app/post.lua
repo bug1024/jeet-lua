@@ -1,8 +1,10 @@
 
+local tpl  = require "core.template"
+
 local Post = {}
 
 Post.index = function(data)
-    ngx.say("I'm your father")
+    tpl.render("app/view.html", {desc="simple web framework based on openresty"})
 end
 
 Post.get = function()
