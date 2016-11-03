@@ -8,7 +8,14 @@ Post.index = function(data)
 end
 
 Post.get = function()
-    ngx.say("you get posts")
+    local cjson = require "cjson"
+    local name = require "core.model"
+
+    local one = name:getConnect():getOne()
+    local many = name:getConnect():getMany()
+
+    ngx.say(cjson.encode(one))
+    ngx.say(cjson.encode(many))
 end
 
 Post.get_latest_posts = function()
